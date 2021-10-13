@@ -1,10 +1,9 @@
 # Que fare?
 ## Idea
 
-La idea que he tingut es fer un llistat en el qual es pugi modificar a traves d'una interficie, el qual es pugi buscar dintre d'ell i ordenar.
-Aunque encara no tinc del tot clara aquesta idea, i no tinc molt clar com fer-la. 
+La idea que he tingut es fer un llistat en el qual es pugi modificar a traves d'una interficie,en la qual es podra inserir, ordenar i eliminar els parametres.
+La taula sera un llistat de productes els quals incluira "nom(producte), nom (empresa de distribucio) i preu d'aquest"
 
 ## Aplicacio de continguts
 
-Encara no tinc clar com aplicar tots els continguts, pero crec que en l'idea que "tinc" podre aplicar aquests, al igual que la idea encara no 
-tinc del tot clar com fer-ho
+Aplicare les col·leccións per a guardar, afegir, modificar i eliminar la informació de la taula i aixi modificar la informació sobre ella.
