@@ -36,10 +36,11 @@ class MainActivity : AppCompatActivity() {
         timeTextView.text= getString(R.string.timeText, time)
     }
     private fun initCountdown () {
-        countdownTimer= object : CountDownTimer(initialCountDownTimer, intervalCountDownTimer)
+        countdownTimer= object : CountDownTimer(initialCountDownTimer, intervalCountDownTimer){
         override fun onTick(millisUntilFinished: Long) {
             val timeLeft = millisUntilFinished/1000
-            timeTextView
+            timeTextView.text = timeLeft.toString()}
+
         }
     }
     private fun incrementCounter() {
