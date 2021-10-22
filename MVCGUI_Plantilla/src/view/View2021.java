@@ -4,6 +4,7 @@ import javax.swing.*;
 
 public class View2021  extends javax.swing.JFrame {
     private JTextField textField1;
+    private JTextField textField2;
     private JPanel panel;
 
     public View2021(){
