@@ -7,6 +7,7 @@ import android.os.CountDownTimer
 import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     internal var counter = 0
@@ -32,12 +33,17 @@ class MainActivity : AppCompatActivity() {
 
         tapMeButton.setOnClickListener {view -> incrementCounter()
             if (!appStarted){
-                countdownTimer.start()
-                appStarted=true
+                startGame()
             }
         }
         timeTextView.text= getString(R.string.timeText, time)
     }
+
+    private fun startGame() {
+        countdownTimer.start()
+        appStarted=true
+    }
+
     private fun initCountdown () {
         countdownTimer= object : CountDownTimer(initialCountDownTimer, intervalCountDownTimer){
         override fun onTick(millisUntilFinished: Long) {
@@ -53,6 +59,9 @@ class MainActivity : AppCompatActivity() {
     private fun incrementCounter() {
         counter += 1
         counterTextView.text = counter.toString()
+    }
+    private fun endGame() {
+        Toast.makeText(this,getString(R.string.endGame))
     }
 }
 
