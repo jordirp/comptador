@@ -51,7 +51,8 @@ class MainActivity : AppCompatActivity() {
             timeTextView.text = timeLeft.toString()}
 
             override fun onFinish() {
-                TODO("Not yet implemented")
+
+                endGame()
             }
 
         }
@@ -61,7 +62,10 @@ class MainActivity : AppCompatActivity() {
         counterTextView.text = counter.toString()
     }
     private fun endGame() {
-        Toast.makeText(this,getString(R.string.endGame))
+        Toast.makeText(this,getString(R.string.endGame), Toast.LENGTH_LONG).show()
+    }
+    private fun resetGame(){
+
     }
 }
 
