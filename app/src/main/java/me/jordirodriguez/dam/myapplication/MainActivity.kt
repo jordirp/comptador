@@ -24,13 +24,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        initCountdown()
+        
         tapMeButton = findViewById(R.id.tapMeButton)
         timeTextView = findViewById(R.id.timeTextView)
         counterTextView = findViewById(R.id.counterTextView)
 
         tapMeButton.setOnClickListener {view -> incrementCounter()
             if (!appStarted){
-                countdownTimer
+                countdownTimer.start()
+                appStarted=true
             }
         }
         timeTextView.text= getString(R.string.timeText, time)
@@ -40,6 +43,10 @@ class MainActivity : AppCompatActivity() {
         override fun onTick(millisUntilFinished: Long) {
             val timeLeft = millisUntilFinished/1000
             timeTextView.text = timeLeft.toString()}
+
+            override fun onFinish() {
+                TODO("Not yet implemented")
+            }
 
         }
     }
