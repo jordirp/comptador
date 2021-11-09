@@ -10,15 +10,20 @@ import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
+    private val INITIAL_TIME = 6
+
+    private val TAG = MainActivity::class.java.simpleName
+
     internal var counter = 0
-    internal var time = 60
+    internal var time =  INITIAL_TIME
     internal lateinit var tapMeButton: Button
     internal lateinit var timeTextView: TextView
     internal lateinit var counterTextView: TextView
 
     internal var appStarted = false
     internal lateinit var countdownTimer : CountDownTimer
-    internal val initialCountDownTimer : Long = 60000
+//    internal val initialCountDownTimer : Long = 60000
+    internal val initialCountDownTimer : Long = time.toLong()*10000
     internal val intervalCountDownTimer : Long = 1000
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +40,7 @@ class MainActivity : AppCompatActivity() {
             if (!appStarted){
                 startGame()
             }
+            //incrementCounter()
         }
         timeTextView.text= getString(R.string.timeText, time)
     }
@@ -51,8 +57,7 @@ class MainActivity : AppCompatActivity() {
             timeTextView.text = timeLeft.toString()}
 
             override fun onFinish() {
-
-                endGame()
+               endGame()
             }
 
         }
@@ -62,9 +67,19 @@ class MainActivity : AppCompatActivity() {
         counterTextView.text = counter.toString()
     }
     private fun endGame() {
-        Toast.makeText(this,getString(R.string.endGame), Toast.LENGTH_LONG).show()
+        Toast.makeText(this, getString(R.string.endGame), Toast.LENGTH_LONG).show()
+        resetGame()
     }
     private fun resetGame(){
+        counter = 0
+        counterTextView = findViewById(R.id.counterTextView)
+
+        time = INITIAL_TIME
+        timeTextView.text = time.toString()  
+        initCountdown()
+
+        appStarted = false
+
 
     }
 }
