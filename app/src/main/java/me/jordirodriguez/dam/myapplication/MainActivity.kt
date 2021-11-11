@@ -11,6 +11,7 @@ import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 
 class MainActivity : AppCompatActivity() {
     private val INITIAL_TIME = 6
@@ -65,8 +66,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showInfo() {
-        val dialogTitle = getString(R.string.aboutTitle)
+        val dialogTitle = getString(R.string.aboutTitle, BuildConfig.VERSION_NAME)
         val dialogMessage = getString(R.string.aboutMessage)
+
+        val builder = AlertDialog.Builder(this)
+
+        builder.setTitle(dialogTitle).setMessage(dialogMessage).create().show()
     }
 
     private fun startGame() {

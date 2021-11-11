@@ -4,5 +4,5 @@
     <string name="endGame">Temps acabat</string>
     <string name="aboutMenu">About</string>
     <string name="aboutTitle">Time Fighter %1$s</string>
-    <string name="aboutMessage">Creat per Jordi Rodriguez Pablo. Github:</string>
+    <string name="aboutMessage">Creat per Jordi Rodriguez Pablo. Github:https://github.com/jordirp/comptador </string>
 </resources>
