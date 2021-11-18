@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Jordis Fighter</string>
+    <string name="yourScore">Puntuació: %1$d</string>
     <string name="timeText">Temps: %1$d</string>
-    <string name="endGame">Temps acabat</string>
+    <string name="endGame">Temps acabat la teua puntuació a sigut de: %1$d</string>
     <string name="aboutMenu">About</string>
     <string name="aboutTitle">Time Fighter %1$s</string>
     <string name="aboutMessage">Creat per Jordi Rodriguez Pablo. Github:https://github.com/jordirp/comptador </string>
